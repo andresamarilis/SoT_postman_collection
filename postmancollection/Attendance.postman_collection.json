@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "2577cd6d-8f6e-4046-8eec-742bee483a0e",
+		"name": "Attendance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36940189"
+	},
+	"item": [
+		{
+			"name": "Get student attendance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\n    {\n\n        \"id\": 1,\n\n        \"user\": {\n\n            \"id\": 1,\n\n            \"username\": \"student1\",\n\n            \"password\": \"password1\",\n\n            \"role\": \"STUDENT\",\n\n            \"enabled\": true,\n\n            \"credentialsNonExpired\": true,\n\n            \"accountNonExpired\": true,\n\n            \"authorities\": [\n\n                {\n\n                    \"authority\": \"STUDENT\"\n\n                }\n\n            ],\n\n            \"accountNonLocked\": true\n\n        },\n\n        \"fitnessClass\": {\n\n            \"id\": 1,\n\n            \"name\": \"Yoga\",\n\n            \"description\": \"A relaxing yoga class\",\n\n            \"instructor\": \"Instructor1\",\n\n            \"schedule\": \"Monday 8 AM\"\n\n        },\n\n        \"status\": true,\n\n        \"date\": \"2024-07-12T04:53:52.318+00:00\",\n\n        \"notes\": \"Present\"\n\n    }\n\n]\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/attendance/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark student attendance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"student1\",\n        \"password\": \"password1\",\n        \"role\": \"STUDENT\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"accountNonLocked\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"STUDENT\"\n            }\n        ]\n    },\n    \"fitnessClass\": {\n        \"id\": 1,\n        \"name\": \"Yoga\",\n        \"description\": \"A relaxing yoga class\",\n        \"instructor\": \"Instructor1\",\n        \"schedule\": \"Monday 8 AM\"\n    },\n    \"date\": \"2024-07-12T05:16:36.370+00:00\",\n    \"notes\": \"Attended\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/attendance/mark",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"mark"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

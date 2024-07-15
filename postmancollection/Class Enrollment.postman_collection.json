@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "d584fe41-8258-4b40-83ea-4bd5f0e05842",
+		"name": "Class Enrollment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36940189"
+	},
+	"item": [
+		{
+			"name": "Enrol students in class",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"studentId\" : 1,\n    \"classId\" : 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enrollments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new class",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Yoga Class\",\n    \"description\" : \"A relaxing yoga class\",\n    \"instructor\" : \"Jane Doe\",\n    \"schedule\" : \"Monday 8 AM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/classes/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"classes",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

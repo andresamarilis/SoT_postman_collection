@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "05eaa509-46b3-41d5-a975-cd32b977b0b0",
+		"name": "Payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36940189"
+	},
+	"item": [
+		{
+			"name": "List student payment details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 1,\n    \"user\": {\n      \"id\": 1,\n      \"username\": \"student1\",\n      \"password\": \"password1\",\n      \"role\": \"STUDENT\",\n      \"enabled\": true,\n      \"credentialsNonExpired\": true,\n      \"accountNonExpired\": true,\n      \"authorities\": [\n        {\n          \"authority\": \"STUDENT\"\n        }\n      ],\n      \"accountNonLocked\": true\n    },\n    \"amount\": 100.0,\n    \"status\": \"Paid\",\n    \"date\": \"2024-07-12T04:53:52.331+00:00\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/payments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\" : {\n        \"id\": 1\n    },\n    \"amount\" : 100.0,\n    \"status\" : \"Paid\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/payments/make",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payments",
+						"make"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
